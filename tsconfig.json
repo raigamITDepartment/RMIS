@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src", // 👈 Important
+    "paths": {
+      "@components/*": ["components/*"],
+      "@ui/*": ["components/ui/*"],
+      "@icons/*": ["components/icons/*"],
+      "@invoice/*": ["components/invoice/*"],
+      "@data/*": ["data/*"],
+      "@types": ["types/index"]
+    }
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+}
