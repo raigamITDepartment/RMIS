@@ -11,7 +11,8 @@ import java.util.Date;
 public class JwtUtils {
 
     private String jwtSecret = "secretKey";
-    private int jwtExpirationMs = 86400000; // 1 day
+//    private int jwtExpirationMs = 86400000; // 1 day
+    private int jwtExpirationMs = 864000000; // 10 days
 //    private int jwtExpirationMs =60000;
 
     public String generateJwtToken(UserDetails userDetails) {
