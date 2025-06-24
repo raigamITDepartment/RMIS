@@ -109,206 +109,216 @@ export default function InvoiceList({
   };
 
   return (
-    <div className="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-white/[0.05] dark:bg-white/[0.03]">
-      <div className="max-w-full overflow-x-auto">
-        <Table>
-          {/* Table Header */}
-          <TableHeader className="border-b border-gray-100 dark:border-white/[0.05]">
-            <TableRow>
-              {/* <TableCell
+      <div className="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-white/[0.05] dark:bg-white/[0.03]">
+        <div className="max-w-full overflow-x-auto">
+          <Table>
+            {/* Table Header */}
+            <TableHeader className="border-b border-gray-100 dark:border-white/[0.05]">
+              <TableRow>
+                {/* <TableCell
                 isHeader
                 className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
               >
                 Id
               </TableCell> */}
-              <TableCell
+                {/* <TableCell
                 isHeader
                 className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
               >
                 Company
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
-              >
-                Invoice Number
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
-              >
-                Invoice Date
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
-              >
-                Location
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
-              >
-                Value
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
-              >
-                Territory
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
-              >
-                Invoice Type
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
-              >
-                FGS(Status)
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
-              >
-                Finance(Status)
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
-              >
-                Actions
-              </TableCell>
-            </TableRow>
-          </TableHeader>
+              </TableCell> */}
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  Invoice Number
+                </TableCell>
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  Invoice Date
+                </TableCell>
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  Location
+                </TableCell>
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  Created User
+                </TableCell>
 
-          {/* Table Body */}
-          <TableBody className="divide-y divide-gray-100 dark:divide-white/[0.05]">
-            {invoices.map((invoice) => (
-              <TableRow key={invoice.id}>
-                {/* <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {invoice.id}
-                </TableCell> */}
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {invoice.companyName ? invoice.companyName : "_"}
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  Value
                 </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {invoice.invoiceNumber}
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  Territory
                 </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {new Date(invoice.createdAt).toLocaleDateString()}
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  Invoice Type
                 </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {invoice.location ? invoice.location : "_"}
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  FGS(Status)
                 </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {invoice.value}
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  Finance(Status)
                 </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {invoice?.territory ? invoice.territory : "_"}
-                </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  <button onClick={() => handleInvoiceTypeChange(invoice)}>
-                    <Badge
-                      size="sm"
-                      color={
-                        invoice.invoiceType === EInvoiceType.AGENCY
-                        ? "primary"
-                        : invoice.invoiceType === EInvoiceType.DIRECT
-                        ? "error"
-                        : invoice.invoiceType === EInvoiceType.ON_APPROVED
-                        ? "info"
-                        : invoice.invoiceType === EInvoiceType.KEY_ACCOUNTS
-                        ? "dark"
-                        : invoice.invoiceType === EInvoiceType.ECF
-                        ? "success"
-                        : "light"
-                      }
-                    >
-                      {invoice.invoiceType}
-                    </Badge>
-                  </button>
-                  {dropdownInvoiceId === invoice.id && (
-                    <div className="absolute z-10 mt-2 w-32 rounded-md bg-white shadow-lg border border-gray-200">
-                      <ul className="py-1 text-sm text-gray-700">
-                        {invoiceTypeOptions.map((option) => (
-                          <li
-                            key={option.value}
-                            onClick={() =>
-                              handleSelectInvoiceType(invoice.id, option.value)
-                            }
-                            className="cursor-pointer px-4 py-2 hover:bg-gray-100"
-                          >
-                            {option.label}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  <button
-                    onClick={() =>
-                      handleStatusClick(invoice, ERole.ROLE_FINISH_GOOD, "FG")
-                    }
-                  >
-                    <Badge
-                      size="sm"
-                      color={
-                        invoice.fgsStatus === EStatus.COMPLETED
-                          ? "success"
-                          : invoice.fgsStatus === EStatus.PENDING
-                          ? "warning"
-                          : "error"
-                      }
-                    >
-                      {invoice.fgsStatus}
-                    </Badge>
-                  </button>
-                </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  <button
-                    onClick={() =>
-                      handleStatusClick(invoice, ERole.ROLE_FINANCE, "FINANCE")
-                    }
-                  >
-                    <Badge
-                      size="sm"
-                      color={
-                        invoice.financeStatus === EStatus.COMPLETED
-                          ? "success"
-                          : invoice.financeStatus === EStatus.PENDING
-                          ? "warning"
-                          : "error"
-                      }
-                    >
-                      {invoice.financeStatus}
-                    </Badge>
-                  </button>
-                </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  <button onClick={() => handleEdit(invoice.id)}>
-                    <PencilIcon className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 size-6" />
-                  </button>
+                <TableCell
+                    isHeader
+                    className="px-5 py-3 font-medium text-gray-500 text-start text-theme-purple-500 dark:text-gray-400"
+                >
+                  Actions
                 </TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        {!!paginatorInfo?.total && (
-          <div className="flex items-center justify-end pb-2">
-            <Pagination
-              total={paginatorInfo.total}
-              current={paginatorInfo.currentPage}
-              pageSize={paginatorInfo.perPage}
-              onChange={onPagination}
-            />
-          </div>
-        )}
-      </div>
-      {/* <Modal
+            </TableHeader>
+
+            {/* Table Body */}
+            <TableBody className="divide-y divide-gray-100 dark:divide-white/[0.05]">
+              {invoices.map((invoice) => (
+                  <TableRow key={invoice.id}>
+                    {/* <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                  {invoice.id}
+                </TableCell> */}
+                    {/* <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                  {invoice.companyName ? invoice.companyName : "_"}
+                </TableCell> */}
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      {invoice.invoiceNumber}
+                    </TableCell>
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      {new Date(invoice.createdAt).toLocaleDateString()}
+                    </TableCell>
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      {invoice.location ? invoice.location : "_"}
+                    </TableCell>
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      {invoice.createdUser}
+                    </TableCell>
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      {invoice.value}
+                    </TableCell>
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      {invoice?.territory ? invoice.territory : "_"}
+                    </TableCell>
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      <button onClick={() => handleInvoiceTypeChange(invoice)}>
+                        <Badge
+                            size="sm"
+                            color={
+                              invoice.invoiceType === EInvoiceType.AGENCY
+                                  ? "primary"
+                                  : invoice.invoiceType === EInvoiceType.DIRECT
+                                      ? "error"
+                                      : invoice.invoiceType === EInvoiceType.ON_APPROVED
+                                          ? "info"
+                                          : invoice.invoiceType === EInvoiceType.KEY_ACCOUNTS
+                                              ? "dark"
+                                              : invoice.invoiceType === EInvoiceType.ECF
+                                                  ? "success"
+                                                  : "light"
+                            }
+                        >
+                          {invoice.invoiceType}
+                        </Badge>
+                      </button>
+                      {dropdownInvoiceId === invoice.id && (
+                          <div className="absolute z-10 mt-2 w-32 rounded-md bg-white shadow-lg border border-gray-200">
+                            <ul className="py-1 text-sm text-gray-700">
+                              {invoiceTypeOptions.map((option) => (
+                                  <li
+                                      key={option.value}
+                                      onClick={() =>
+                                          handleSelectInvoiceType(invoice.id, option.value)
+                                      }
+                                      className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                                  >
+                                    {option.label}
+                                  </li>
+                              ))}
+                            </ul>
+                          </div>
+                      )}
+                    </TableCell>
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      <button
+                          onClick={() =>
+                              handleStatusClick(invoice, ERole.ROLE_FINISH_GOOD, "FG")
+                          }
+                      >
+                        <Badge
+                            size="sm"
+                            color={
+                              invoice.fgsStatus === EStatus.COMPLETED
+                                  ? "success"
+                                  : invoice.fgsStatus === EStatus.PENDING
+                                      ? "warning"
+                                      : "error"
+                            }
+                        >
+                          {invoice.fgsStatus}
+                        </Badge>
+                      </button>
+                    </TableCell>
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      <button
+                          onClick={() =>
+                              handleStatusClick(invoice, ERole.ROLE_FINANCE, "FINANCE")
+                          }
+                      >
+                        <Badge
+                            size="sm"
+                            color={
+                              invoice.financeStatus === EStatus.COMPLETED
+                                  ? "success"
+                                  : invoice.financeStatus === EStatus.PENDING
+                                      ? "warning"
+                                      : "error"
+                            }
+                        >
+                          {invoice.financeStatus}
+                        </Badge>
+                      </button>
+                    </TableCell>
+                    <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
+                      <button onClick={() => handleEdit(invoice.id)}>
+                        <PencilIcon className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 size-6" />
+                      </button>
+                    </TableCell>
+                  </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+          {!!paginatorInfo?.total && (
+              <div className="flex items-center justify-end pb-2">
+                <Pagination
+                    total={paginatorInfo.total}
+                    current={paginatorInfo.currentPage}
+                    pageSize={paginatorInfo.perPage}
+                    onChange={onPagination}
+                />
+              </div>
+          )}
+        </div>
+        {/* <Modal
         isOpen={isOpen}
         onClose={() => {
           closeModal();
@@ -387,6 +397,6 @@ export default function InvoiceList({
           </form>
         </div>
       </Modal> */}
-    </div>
+      </div>
   );
 }
