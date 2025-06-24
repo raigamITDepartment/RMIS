@@ -2,6 +2,8 @@ package com.company.finance.finance_manager.service;
 
 import com.company.finance.finance_manager.entity.Invoice;
 import com.company.finance.finance_manager.entity.InvoiceMiddleware;
+import com.company.finance.finance_manager.enums.EInvoiceType;
+import com.company.finance.finance_manager.enums.EStatus;
 import com.company.finance.finance_manager.repository.InvoiceMiddlewareRepository;
 import com.company.finance.finance_manager.repository.InvoiceRepository;
 import jakarta.transaction.Transactional;
@@ -45,10 +47,19 @@ public class InvoiceCronJobService {
 
     private Invoice convertToInvoice(InvoiceMiddleware middleware) {
         Invoice invoice = new Invoice();
-        // Map fields here
+
         invoice.setInvoiceNumber(middleware.getDocNumber());
+        invoice.setCreatedAt(middleware.getDocDate());
+        invoice.setTerritory(middleware.getCardCode());
         invoice.setValue(middleware.getDocTotal());
-        // etc...
+        invoice.setLocation(middleware.getWareHouse());
+        invoice.setCreatedUser(middleware.getUserSign());
+        invoice.setCompanyName(middleware.getCompanyName());
+
+        invoice.setFinanceStatus(EStatus.PENDING);
+        invoice.setFgsStatus(EStatus.PENDING);
+        invoice.setInvoiceType(EInvoiceType.AGENCY);
+
         return invoice;
     }
 }

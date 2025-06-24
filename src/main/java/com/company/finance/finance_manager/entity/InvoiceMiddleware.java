@@ -15,7 +15,7 @@ public class InvoiceMiddleware {
 
     private String docNumber;
 
-    private String docDate;
+    private LocalDateTime docDate;
 
     private String cardCode;
 
@@ -27,4 +27,5 @@ public class InvoiceMiddleware {
 
     private LocalDateTime syncedAt;
 
+    private String CompanyName;
 }
